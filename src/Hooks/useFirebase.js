@@ -9,12 +9,6 @@ import {
   onAuthStateChanged,
   updateProfile,
 } from "firebase/auth";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
 import axios from "axios";
 import FirebaseInit from "../firebase/firebase.init";
 
@@ -25,7 +19,6 @@ const useFirebase = () => {
   const [loading, setLoading] = useState(true);
   const [admin, setAdmin] = useState(false);
   const auth = getAuth();
-  const storage = getStorage();
   const googleProvider = new GoogleAuthProvider();
   const googleLogin = (navigate, url) => {
     signInWithPopup(auth, googleProvider)
@@ -113,10 +106,7 @@ const useFirebase = () => {
     authError,
     admin,
     loading,
-    storage,
-    ref,
-    uploadBytesResumable,
-    getDownloadURL,
+    
   };
 };
 

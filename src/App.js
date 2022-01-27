@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import AddBlog from "./Pages/AddBlog/AddBlog";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import MakeAdmin from "./Pages/Dashboard/MakeAdmin/MakeAdmin";
+import ManageBlogs from "./Pages/Dashboard/ManageBlogs/ManageBlogs";
 import Home from "./Pages/HomePage/Home/Home";
 import Login from "./Pages/Login/Login";
 import ShowBlog from "./Pages/ShowBlog/ShowBlog";
@@ -29,9 +31,17 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/dashboard" element={<PrivateRoute>
-          <Dashboard/>
-        </PrivateRoute>}/>
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        >
+          <Route path="manageblogs" index element={<ManageBlogs />} />
+          <Route path="makeadmin" index element={<MakeAdmin />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

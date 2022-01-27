@@ -24,13 +24,13 @@ const AdminPanle = () => {
               {/* <!-- primary nav --> */}
               <div className="hidden md:flex items-center space-x-1">
                 <NavLink
-                  to="/addblog"
+                  to="/dashboard/manageblogs"
                   className="py-5 px-3 text-gray-700 hover:text-gray-900"
                 >
                   Manage Blogs
                 </NavLink>
                 <NavLink
-                  to="/addblog"
+                  to="/dashboard/makeadmin"
                   className="py-5 px-3 text-gray-700 hover:text-gray-900"
                 >
                   Make Admin
@@ -74,13 +74,13 @@ const AdminPanle = () => {
           } md:hidden mx-4 flex flex-col items-center`}
         >
           <NavLink
-            to="/addblog"
+            to="/dashboard/manageblogs"
             className="block py-2 px-3 text-gray-700 hover:text-gray-900"
           >
             Manage Blogs
           </NavLink>
           <NavLink
-            to="/addblog"
+            to="/dashboard/makeadmin"
             className="block py-2 px-3 text-gray-700 hover:text-gray-900"
           >
             Make Admin

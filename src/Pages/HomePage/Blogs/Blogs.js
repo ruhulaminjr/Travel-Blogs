@@ -6,7 +6,7 @@ import Blog from "./Blog";
 const Blogs = () => {
   const [blogsData, setBlogsData] = useState([]);
   useEffect(() => {
-    axios.get("http://localhost:5000/getblogs").then((result) => {
+    axios.get("http://localhost:5000/gethomeblogs").then((result) => {
       setBlogsData(result.data);
     });
   }, []);
