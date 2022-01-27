@@ -8,10 +8,12 @@ const Blogs = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     setLoading(true);
-    axios.get("http://localhost:5000/gethomeblogs").then((result) => {
-      setBlogsData(result.data);
-      setLoading(false);
-    });
+    axios
+      .get("https://rocky-inlet-47708.herokuapp.com/gethomeblogs")
+      .then((result) => {
+        setBlogsData(result.data);
+        setLoading(false);
+      });
   }, []);
   if (loading) {
     return (

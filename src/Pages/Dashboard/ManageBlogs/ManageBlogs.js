@@ -5,23 +5,29 @@ const ManageBlogs = () => {
   const [blogsData, setBlogsData] = useState([]);
   const [render, setRender] = useState(false);
   const blogApproveHandler = (id) => {
-    axios.put(`http://localhost:5000/approveblog/${id}`).then((result) => {
-      if (result.data.acknowledged) {
-        setRender(!render);
-      }
-    });
+    axios
+      .put(`https://rocky-inlet-47708.herokuapp.com/approveblog/${id}`)
+      .then((result) => {
+        if (result.data.acknowledged) {
+          setRender(!render);
+        }
+      });
   };
   const blogDeleteHandler = (id) => {
-    axios.delete(`http://localhost:5000/blogdelete/${id}`).then((result) => {
-      if (result.data.acknowledged) {
-        setRender(!render);
-      }
-    });
+    axios
+      .delete(`https://rocky-inlet-47708.herokuapp.com/blogdelete/${id}`)
+      .then((result) => {
+        if (result.data.acknowledged) {
+          setRender(!render);
+        }
+      });
   };
   useEffect(() => {
-    axios.get("http://localhost:5000/getblogs").then((result) => {
-      setBlogsData(result.data);
-    });
+    axios
+      .get("https://rocky-inlet-47708.herokuapp.com/getblogs")
+      .then((result) => {
+        setBlogsData(result.data);
+      });
   }, [render]);
   return (
     <div className="container mx-auto bg-[#F3F4F6]">

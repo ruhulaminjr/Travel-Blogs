@@ -27,11 +27,13 @@ const AddBlog = () => {
       date: startDate.toDateString(),
       status: `${admin ? "approved" : "pending"}`,
     };
-    axios.post("http://localhost:5000/newblog", blogData).then((result) => {
-      if (result.data.insertedId) {
-        navigate("/");
-      }
-    });
+    axios
+      .post("https://rocky-inlet-47708.herokuapp.com/newblog", blogData)
+      .then((result) => {
+        if (result.data.insertedId) {
+          navigate("/");
+        }
+      });
   };
 
   return (

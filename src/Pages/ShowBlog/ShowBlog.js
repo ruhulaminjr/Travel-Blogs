@@ -9,9 +9,11 @@ const ShowBlog = () => {
   const [data, setData] = useState({});
   const { id } = useParams();
   useEffect(() => {
-    axios.get(`http://localhost:5000/getblog/${id}`).then((result) => {
-      setData(result.data);
-    });
+    axios
+      .get(`https://rocky-inlet-47708.herokuapp.com/getblog/${id}`)
+      .then((result) => {
+        setData(result.data);
+      });
   }, [id]);
   return (
     <div>

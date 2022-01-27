@@ -71,7 +71,7 @@ const useFirebase = () => {
   };
   const saveUserToDb = (email, displayName) => {
     const newuser = { email, displayName };
-    fetch("http://localhost:5000/saveusers", {
+    fetch("https://rocky-inlet-47708.herokuapp.com/saveusers", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -89,10 +89,11 @@ const useFirebase = () => {
       setLoading(false);
     });
     return () => unsubscribe;
-  }, []);
+
+  }, [auth]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/getAdmin/${user?.email}`)
+      .get(`https://rocky-inlet-47708.herokuapp.com/getAdmin/${user?.email}`)
       .then((result) => {
         setAdmin(result.data.admin);
       });

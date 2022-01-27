@@ -8,9 +8,11 @@ const MakeAdmin = () => {
   const navigate = useNavigate();
   const onSubmit = (data) => {
     axios
-      .put("http://localhost:5000/makeadmin", { email: data.email })
+      .put("https://rocky-inlet-47708.herokuapp.com/makeadmin", {
+        email: data.email,
+      })
       .then((result) => {
-          console.log(result.data);
+        console.log(result.data);
         if (result.data.acknowledged) {
           navigate("/");
         }

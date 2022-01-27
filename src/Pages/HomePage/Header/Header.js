@@ -12,8 +12,7 @@ const Header = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-  };
-  const slider = [1, 2, 3, 4, 5, 6];
+}
   return (
     <div>
       <div className="container mx-auto">
