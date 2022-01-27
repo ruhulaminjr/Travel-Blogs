@@ -41,9 +41,9 @@ const ShowBlog = () => {
             {data.name}, {data.date}
           </h2>
           <div className="flex gap-2 flex-wrap">
-            <div class="flex items-center my-1">
-              <span class="text-md">Facilities</span>
-              <div class="flex items-center">
+            <div className="flex items-center my-1">
+              <span className="text-md">Facilities</span>
+              <div className="flex items-center">
                 <ReactStars
                   count={5}
                   size={24}
@@ -53,9 +53,9 @@ const ShowBlog = () => {
                 />
               </div>
             </div>
-            <div class="flex items-center my-1">
-              <span class="text-md">Over-All</span>
-              <div class="flex items-center ml-2">
+            <div className="flex items-center my-1">
+              <span className="text-md">Over-All</span>
+              <div className="flex items-center ml-2">
                 <ReactStars
                   count={5}
                   size={24}
