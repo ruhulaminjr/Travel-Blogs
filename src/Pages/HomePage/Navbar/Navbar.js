@@ -5,10 +5,7 @@ import useAuth from "../../../Hooks/useAuth";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(true);
-  const { user, LogOut } = useAuth();
-  const LogOutHandler = () => {
-    LogOut();
-  };
+  const { user, LogOut, admin } = useAuth();
   return (
     <div>
       {/* <!-- navbar goes here --> */}
@@ -49,12 +46,14 @@ const Navbar = () => {
                   >
                     Add Experiences
                   </NavLink>
-                  <NavLink
-                    to="/dashboard"
-                    className="py-5 px-3 text-gray-700 hover:text-gray-900"
-                  >
-                    Dashboard
-                  </NavLink>
+                  {admin && (
+                    <NavLink
+                      to="/dashboard/manageblogs"
+                      className="py-5 px-3 text-gray-700 hover:text-gray-900"
+                    >
+                      Dashboard
+                    </NavLink>
+                  )}
                 </div>
               ) : (
                 ""
@@ -145,6 +144,14 @@ const Navbar = () => {
           >
             Add Experiences
           </NavLink>
+          {admin && (
+            <NavLink
+              to="/dashboard/manageblogs"
+              className="block py-2 px-3 text-gray-700 hover:text-gray-900"
+            >
+              Dashboard
+            </NavLink>
+          )}
         </div>
       </nav>
     </div>

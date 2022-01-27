@@ -7,6 +7,7 @@ import ManageBlogs from "./Pages/Dashboard/ManageBlogs/ManageBlogs";
 import Home from "./Pages/HomePage/Home/Home";
 import Login from "./Pages/Login/Login";
 import ShowBlog from "./Pages/ShowBlog/ShowBlog";
+import AdminRoute from "./PrivateRoute/AdminRoute";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
 function App() {
@@ -34,9 +35,9 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <PrivateRoute>
+            <AdminRoute>
               <Dashboard />
-            </PrivateRoute>
+            </AdminRoute>
           }
         >
           <Route path="manageblogs" index element={<ManageBlogs />} />

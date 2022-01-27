@@ -11,6 +11,7 @@ import axios from "axios";
 const AddBlog = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { register, handleSubmit } = useForm();
+  const { admin } = useAuth();
   const navigate = useNavigate();
 
   const [facilities, setFacilities] = useState(null);
@@ -24,7 +25,7 @@ const AddBlog = () => {
       facilities,
       overall,
       date: startDate.toDateString(),
-      status: "pending",
+      status: `${admin ? "approved" : "pending"}`,
     };
     axios.post("http://localhost:5000/newblog", blogData).then((result) => {
       if (result.data.insertedId) {

@@ -1,9 +1,21 @@
+import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const MakeAdmin = () => {
   const { register, handleSubmit } = useForm();
-
+  const navigate = useNavigate();
+  const onSubmit = (data) => {
+    axios
+      .put("http://localhost:5000/makeadmin", { email: data.email })
+      .then((result) => {
+          console.log(result.data);
+        if (result.data.acknowledged) {
+          navigate("/");
+        }
+      });
+  };
   return (
     <div className="relative min-h-screen flex flex-col sm:justify-center items-center bg-gray-100 ">
       <div className="relative sm:max-w-sm w-full">
@@ -14,7 +26,7 @@ const MakeAdmin = () => {
             Make Admin
           </h1>
           <div className="flex mt-7 justify-center w-full">
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="flex flex-col gap-2 items-center justify-center">
                 <label htmlFor="name" className="text-lx font-serif">
                   Email:
@@ -29,7 +41,10 @@ const MakeAdmin = () => {
                 />
               </div>
               <div className="flex items-center justify-center my-2">
-                <button className="p-2 rounded bg-green-700 text-white">
+                <button
+                  className="p-2 rounded bg-green-700 text-white"
+                  type="submit"
+                >
                   Make Admin
                 </button>
               </div>
