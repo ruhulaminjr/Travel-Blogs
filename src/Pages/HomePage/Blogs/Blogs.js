@@ -11,7 +11,9 @@ const Blogs = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:5000/gethomeblogs?page=${currentPage}`)
+      .get(
+        `https://rocky-inlet-47708.herokuapp.com/gethomeblogs?page=${currentPage}`
+      )
       .then((result) => {
         setBlogsData(result.data.allblogs);
         setLoading(false);

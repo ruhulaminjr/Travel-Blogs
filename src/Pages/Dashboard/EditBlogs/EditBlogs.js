@@ -32,7 +32,7 @@ const EditBlogs = () => {
       status: "approved",
     };
     axios
-      .put(`http://localhost:5000/editblog/${id}`, blogData)
+      .put(`https://rocky-inlet-47708.herokuapp.com/editblog/${id}`, blogData)
       .then((result) => {
         if (result.data.acknowledged) {
           navigate("/");
