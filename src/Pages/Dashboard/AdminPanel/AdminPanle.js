@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useState } from "react/cjs/react.development";
 
 const AdminPanle = () => {
   const [toggle, setToggle] = useState(true);
