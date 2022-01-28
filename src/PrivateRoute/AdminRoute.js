@@ -7,7 +7,7 @@ const AdminRoute = ({ children }) => {
   if (loading) {
     return <div className="loader"></div>;
   }
-  return user && admin ? children : <Navigate to="/login" />;
+  return user && admin ? children : <Navigate to="/" />;
 };
 
 export default AdminRoute;

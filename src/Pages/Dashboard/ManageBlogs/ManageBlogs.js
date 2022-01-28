@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const ManageBlogs = () => {
   const [blogsData, setBlogsData] = useState([]);
@@ -67,6 +68,7 @@ const ManageBlogs = () => {
                     </p>
                   </h3>
                   <div className="flex items-center justify-center gap-3">
+                    <Link to={`/dashboard/editblog/${blog._id}`} className="px-4 py-2 font-bold text-white bg-yellow-500">Edit</Link>
                     {blog.status === "pending" ? (
                       <button
                         className="px-4 py-2 bg-green-700 text-white font-bold"

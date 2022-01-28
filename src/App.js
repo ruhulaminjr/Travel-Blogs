@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import AddBlog from "./Pages/AddBlog/AddBlog";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import EditBlogs from "./Pages/Dashboard/EditBlogs/EditBlogs";
 import MakeAdmin from "./Pages/Dashboard/MakeAdmin/MakeAdmin";
 import ManageBlogs from "./Pages/Dashboard/ManageBlogs/ManageBlogs";
 import Home from "./Pages/HomePage/Home/Home";
@@ -40,8 +41,9 @@ function App() {
             </AdminRoute>
           }
         >
-          <Route path="manageblogs" index element={<ManageBlogs />} />
-          <Route path="makeadmin" index element={<MakeAdmin />} />
+          <Route path="manageblogs" element={<ManageBlogs />} />
+          <Route path="makeadmin" element={<MakeAdmin />} />
+          <Route path="editblog/:id" element={<EditBlogs />} />
         </Route>
       </Routes>
     </BrowserRouter>
